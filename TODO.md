@@ -2,7 +2,7 @@
 - [] [Manual](https://docs.google.com/document/d/1otYvNBTQKkhJsoeWP2gNWhqy1iUQ9b0GWZMZWrlHCao/edit?usp=sharing)
 
 # Geral
-- [] Apresentar min/max/média do tamanho dos pacotes recebidos
+- [x] Apresentar min/max/média do tamanho dos pacotes recebidos
 
 # Nível de Enlace
 - [] Quantidade e porcentagem de ARP Requests e ARP Reply
