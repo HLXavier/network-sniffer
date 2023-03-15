@@ -1,6 +1,6 @@
 from socket import socket, AF_PACKET, SOCK_RAW, ntohs
 from binascii import hexlify
-from protocols import ARP, IPV4, IPV6, ARP_TYPES, NETWORK_PROTOCOLS, ICMP_TYPES, ICMPV6_TYPES, TRANSPORT_PROTOCOLS, ICMP, ICMPV6, UNDEFINED_PROTOCOL
+from protocols import ARP, IPV4, IPV6, TCP, UDP, ARP_TYPES, NETWORK_PROTOCOLS, ICMP_TYPES, ICMPV6_TYPES, TRANSPORT_PROTOCOLS, ICMP, ICMPV6, UNDEFINED_PROTOCOL
 
 
 def format_packet(raw_packet):
@@ -23,14 +23,27 @@ def handle_application(packet):
     return UNDEFINED_PROTOCOL
 
 
-# TODO
 def handle_tcp(packet):
-    return UNDEFINED_PROTOCOL
+    data_offset = packet[12][0]
+    header_size = int(data_offset, 16) * 4
+
+    tcp_header = packet[:header_size]
+    packet = packet[header_size:]
+    
+    bytes = ''.join(tcp_header[2:4])
+    port = int(bytes, 16)
+
+    return [f'port:{port}', *handle_application(packet)]
 
 
-# TODO
-def handle_upd(packet):
-    return UNDEFINED_PROTOCOL
+def handle_udp(packet):
+    udp_header = packet[:8]
+    packet = packet[8:]
+
+    bytes = ''.join(udp_header[2:4])
+    port = int(bytes, 16)
+
+    return [f'port:{port}', *handle_application(packet)]
 
 
 def handle_arp(packet):
@@ -60,10 +73,14 @@ def handle_ipv4(packet):
     if bytes in TRANSPORT_PROTOCOLS:
         protocol = TRANSPORT_PROTOCOLS[bytes]
 
+        if protocol == TCP:
+            return [protocol, *handle_tcp(packet)]
+
+        if protocol == UDP:
+            return [protocol, *handle_udp(packet)]
+
         if protocol == ICMP:
             return [protocol, *handle_icmp(packet)] 
-
-        return [TRANSPORT_PROTOCOLS[bytes]]
 
     return UNDEFINED_PROTOCOL
     
@@ -104,20 +121,20 @@ def handle_network(packet):
         protocol = NETWORK_PROTOCOLS[bytes]
 
         if protocol == ARP:
-            return [ARP, *handle_arp(packet)]
+            return [protocol, *handle_arp(packet)]
             
         if protocol == IPV4:
-            return [IPV4, *handle_ipv4(packet)]
+            return [protocol, *handle_ipv4(packet)]
 
         if protocol == IPV6:
-            return [IPV6, *handle_ipv6(packet)]
+            return [protocol, *handle_ipv6(packet)]
 
 
 def process_packet(raw_packet):
     packet = format_packet(raw_packet)
     protocols = handle_network(packet)
     
-    if protocols:
+    if protocols and len(protocols) > 2:
         print(protocols)
 
 

@@ -27,12 +27,12 @@ ICMPV6ECHO_REQUEST = 'icmpv6echo_request'
 ICMPV6ECHO_REPLY = 'icmpv6echo_reply'
 
 TCP = 'tcp'
-UPD = 'udp'
+UDP = 'udp'
 
 TRANSPORT_PROTOCOLS = {
     '01': ICMP,
     '06': TCP,
-    '11': UPD,
+    '11': UDP,
     '3a': ICMPV6
 }
 

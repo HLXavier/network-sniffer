@@ -8,18 +8,18 @@
 - [x] Quantidade e porcentagem de ARP Requests e ARP Reply
 
 # Nível de Rede
-- [ ] Quantidade e porcentagem de pacotes IPv4
-- [ ] Quantidade e porcentagem de pacotes ICMP
-- [ ] Quantidade e porcentagem de ICMP Echo Requeste ICMP Echo Reply
-- [ ] Quantidade e porcentagem de pacotes IPv6
-- [ ] Quantidade e porcentagem de pacotes ICMPv6
-- [ ] Quantidade e porcentagem de ICMPv6Echo Requeste ICMPv6Echo Reply
+- [x] Quantidade e porcentagem de pacotes IPv4
+- [x] Quantidade e porcentagem de pacotes ICMP
+- [x] Quantidade e porcentagem de ICMP Echo Requeste ICMP Echo Reply
+- [x] Quantidade e porcentagem de pacotes IPv6
+- [x] Quantidade e porcentagem de pacotes ICMPv6
+- [x] Quantidade e porcentagem de ICMPv6Echo Requeste ICMPv6Echo Reply
 
 # Nível de Transporte
-- [ ] Quantidade e porcentagem de pacotes UDP
-- [ ] Quantidade e porcentagem de pacotes TCP
-- [ ] Lista com as 5 portas TCP mais acessadas
-- [ ] Lista com as 5 portas UDP mais acessadas
+- [x] Quantidade e porcentagem de pacotes UDP
+- [x] Quantidade e porcentagem de pacotes TCP
+- [x] Lista com as 5 portas TCP mais acessadas
+- [x] Lista com as 5 portas UDP mais acessadas
 
 # Nível de Aplicação
 - [ ] Quantidade e porcentagem de pacotes HTTP
