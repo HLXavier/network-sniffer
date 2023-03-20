@@ -1,4 +1,4 @@
-# Network
+# === Network Layer ===
 ARP = 'arp'
 ARP_REQUEST = 'arp_request'
 ARP_REPLY = 'arp_reply'
@@ -17,7 +17,7 @@ ARP_TYPES = {
     '0002': ARP_REPLY
 }
 
-# Transport
+# === Transport Layer ===
 ICMP = 'icmp'
 ICMPECHO_REQUEST = 'icmpecho_request'
 ICMPECHO_REPLY = 'icmpecho_reply'
@@ -44,6 +44,21 @@ ICMP_TYPES = {
 ICMPV6_TYPES = {
     '80': ICMPV6ECHO_REQUEST,
     '81': ICMPV6ECHO_REPLY
+}
+
+# === Application Layer ===
+HTTP = 'http'
+HTTPS = 'https'
+DNS = 'dns'
+DHCP = 'dhcp'
+SSH = 'ssh'
+
+APPLICATION_PROTOCOLS = {
+    80: HTTP,
+    443: HTTPS,
+    53: DNS,
+    68: DHCP,
+    22: SSH
 }
 
 UNDEFINED_PROTOCOL = [None]

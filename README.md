@@ -22,7 +22,7 @@
 - [x] Lista com as 5 portas UDP mais acessadas
 
 # Nível de Aplicação
-- [ ] Quantidade e porcentagem de pacotes HTTP
-- [ ] Quantidade e porcentagem de pacotes DNS
-- [ ] Quantidade e porcentagem de pacotes DHCP
-- [ ] Quantidade e porcentagem para outro protocolo de aplicação qualquer
+- [x] Quantidade e porcentagem de pacotes HTTP
+- [x] Quantidade e porcentagem de pacotes DNS
+- [x] Quantidade e porcentagem de pacotes DHCP
+- [x] Quantidade e porcentagem para outro protocolo de aplicação qualquer (SSH)
