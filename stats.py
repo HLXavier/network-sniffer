@@ -15,7 +15,7 @@ def ingest_stack(protocol_stack):
             stats[entry] += 1
         else:
             stats[entry] = 1
-    
+
         if entry and'to_port' in entry:
             port = entry.split(':')[1]
             port = int(port)
@@ -23,7 +23,7 @@ def ingest_stack(protocol_stack):
                 port_stats[port] += 1
             else:
                 port_stats[port] = 1
-            
+
 
 
 def print_stats():
@@ -35,7 +35,7 @@ def print_stats():
 
 
 def print_sizes():
-    min_size = min(packet_sizes) 
+    min_size = min(packet_sizes)
     max_size = max(packet_sizes)
     mean_size = sum(packet_sizes) / len(packet_sizes)
 
@@ -50,12 +50,12 @@ def print_network_stats():
     print_stat(IPV4)
     print_stat(ICMP)
     print_stat(ICMPECHO_REQUEST)
-    print_stat(ICMPECHO_REQUEST)
+    print_stat(ICMPECHO_REPLY)
     print_stat(IPV6)
     print_stat(ICMPV6)
     print_stat(ICMPV6ECHO_REQUEST)
     print_stat(ICMPV6ECHO_REPLY)
-    
+
 
 def print_data_link_stats():
     print('\nData link')
@@ -90,6 +90,5 @@ def print_stat(protocol):
 def get_count(protocol):
     if protocol in stats:
         return stats[protocol]
-    
+
     return 0
-    
