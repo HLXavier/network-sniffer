@@ -1,5 +1,4 @@
-# Manual
-- [ ] [Manual](https://docs.google.com/document/d/1otYvNBTQKkhJsoeWP2gNWhqy1iUQ9b0GWZMZWrlHCao/edit?usp=sharing)
+# [Relatório](./relatorio.pdf)
 
 # Geral
 - [x] Apresentar min/max/média do tamanho dos pacotes recebidos
